@@ -4,7 +4,7 @@ import itertools
 var=""
 prev=""
 counter=0
-def encryptceaser(key, message):
+def encryptceaser(key, message): #ABCAHMAD
     message = message.upper()
     alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     result = ""
@@ -41,7 +41,7 @@ def transformtoascii(key):
     list=[ord(c) for c in key]
     asciiPlain=""
 
-    #print(list)----------debug
+    #print(list)
     newlist=[]
     #fixing the problem that occurs when the key is shorter than the message so it duplicates it
     if len(list) < len(message.replace(" ","")):
@@ -58,7 +58,7 @@ def transformtoascii(key):
         for i in list:
             asciiPlain+=str(i)
     return asciiPlain
-    #print(asciiPlain)--------debug
+    
 def encrypt(asciiPlain,message):
         for letter in message:
             global var
@@ -86,8 +86,9 @@ if choice=="1":
     encrypt(asciiPlain,message)
     print("The encrypted message is: ",var)
     
-else:
+elif choice=="2":
     decrypt(asciiPlain,message)
     print("The decrypted message is: ",prev)
-    
 
+else:
+    print("You didn't choose a valid option.")
